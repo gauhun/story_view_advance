@@ -136,9 +136,11 @@ class StoryVideoState extends State<StoryVideo> {
   Widget getContentView() {
     if (widget.videoLoader.state == LoadState.success &&
         playerController!.value.isInitialized) {
-      return Center(
-        child: AspectRatio(
-          aspectRatio: playerController!.value.aspectRatio,
+      return FittedBox(
+        fit: BoxFit.cover,
+        child: SizedBox(
+          width: playerController!.value.size.width,
+          height: playerController!.value.size.height,
           child: VideoPlayer(playerController!),
         ),
       );
@@ -170,8 +172,8 @@ class StoryVideoState extends State<StoryVideo> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.black,
-      height: double.infinity,
       width: double.infinity,
+      height: double.infinity,
       child: getContentView(),
     );
   }

@@ -226,7 +226,7 @@ class StoryItem {
     required StoryController controller,
     Key? key,
     Duration? duration,
-    BoxFit imageFit = BoxFit.fitWidth,
+    BoxFit imageFit = BoxFit.cover,
     Widget? caption,
     bool shown = false,
     Map<String, dynamic>? requestHeaders,
@@ -836,7 +836,7 @@ class StoryProgressIndicator extends StatelessWidget {
     this.indicatorForegroundColor,
   });
 
-  @override 
+  @override
   Widget build(BuildContext context) {
     return CustomPaint(
       size: Size.fromHeight(
